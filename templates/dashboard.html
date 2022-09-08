@@ -1,78 +1,40 @@
-<!-- {% extends "layout.html" %}
-{% block body %} -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <meta name="description" content="">
-    <meta name="author" content="">
-   
+{% extends "layout.html" %}
+{% block body %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('./Static/Assets/chatlogo.png')">
+        <header class="masthead" style="background-image: url('static/assets/img/pexels-lukas-1420709.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Admin panel</h1>
-                            <span class="subheading">Manage Your posts here</span>
+                            <span class="subheading">Manage Your Chatbot here</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-      </head>
-      <body>
-        
-    
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                  <h1>Basic Actions</h1>
-                  <a href ="/edit/0"> <button class="btn btn-primary">Add a post</button></a>
-                  <a href ="/logout"> <button class="btn btn-primary">Logout</button></a>
-
                   <hr>
-                  <h1>Update Posts</h1>
-                 <form action ="/uploader" method="post" enctype="multipart/form-data">
-                  <input type="file" name="file1">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <hr>
-                  </form>
-                    <h1>Edit Posts</h1>
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th>S.no</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <!-- {% for post in posts %} -->
-                          <tr>
-                            <td>{{post.sno}}</td>
-                            <td>{{post.title}}</td>
-                            <td>{{post.date}}</td>
-                            <td><a href ="/edit/{{post.sno}}"> <button class="btn btn-primary">Edit</button></a></td>
-                            <td><a href ="/delete/{{post.sno}}"> <button class="btn btn-primary">Delete</button></a></td>
-                          </tr>
-                          <!-- {% endfor %} -->
+                
+                    <h1>Edit Posts</h1><br>
+                        <form method="POST">
+                            <div class="control-group">
+                              <div class="form-group floating-label-form-group controls">
+                                <h4><label>Data For the Bot</label></h4><br>
+                                <textarea rows="10"  class="form-control" placeholder="Text" name = "content" id="content" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                              </div>
+                            <button type="submit" class="btn btn-primary" style="margin-bottom: 50px;">Save</button>
+                                </div>
+                        </form>
+              
  
-
 
                         </tbody>
                       </table>      
             
-                      <p class="copyrightText">
-                        Copyright © 2022 ChatBot. All rights reserved.
-                    </p>
-                    </form>
-                
-                
-                 </body>
-                </html>
-<!-- {% endblock %} -->
+
+{% endblock %}
