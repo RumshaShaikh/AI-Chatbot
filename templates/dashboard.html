@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('static/assets/img/pexels-lukas-1420709.jpg')">
+        <header class="masthead" style="background-image: url('/static/assets/img/pexels-lukas-1420709.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -19,12 +19,13 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                   <hr>
                 
-                    <h1>Edit Your Bot Data</h1><br>
+                    <h1>Edit Posts</h1>
+                    <br>
                         <form method="POST">
                             <div class="control-group">
                               <div class="form-group floating-label-form-group controls">
-                                <h4><label>Data For the Bot</label></h4><br>
-                                <textarea rows="10"  class="form-control" placeholder="Text" name = "content" id="content" required data-validation-required-message="Please enter a message."></textarea>
+                                <label>Data For the Bot</label>
+                                <textarea rows="10"  class="form-control" placeholder="Text" name = "content" id="content" required data-validation-required-message="Please enter a message.">{{params["dataset"]}}</textarea>
                                 <p class="help-block text-danger"></p>
                               </div>
                             <button type="submit" class="btn btn-primary" style="margin-bottom: 50px;">Save</button>
