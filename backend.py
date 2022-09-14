@@ -4,6 +4,9 @@ from flask import session,redirect
 import json
 from werkzeug.utils import secure_filename
 
+with open("config.json","r") as c:
+    params=json.load(c)["params"]
+
 app = Flask(__name__)
 app.secret_key="super-secret-key"
 
@@ -24,7 +27,27 @@ def textchat():
 #this is the route for the dashboard page for editing and customizing the data
 @app.route("/dashboard", methods=["GET","POST"])
 def dashboard():
-    return render_template("dashboard.html")
+    if request.method=="POST":
+            if "content" in request.form:
+                with open("text.txt","w")as f:
+                    f.write(request.form["content"])
+            else:
+                username = request.form.get("uname")
+                userpass = request.form.get("pass")
+                if username==params['admin_user'] and userpass==params['admin_password']:
+                    # set the session variable
+                    session['user']=username
+                    with open("text.txt","r") as f:
+                        data=f.read()
+                        params["dataset"]=data
+                    return render_template("dashboard.html", params=params)
+    if "user" in session and session['user']==params['admin_user']:
+        with open("text.txt","r") as f:
+            data=f.read()
+            params["dataset"]=data
+        return render_template("dashboard.html", params=params)
+    else:
+        return render_template("signin.html", params=params)
 
 
 #this is for voicechat
@@ -35,10 +58,10 @@ def voice():
 
 
 #this is for logging out of the signin page 
-# @app.route('/logout')
-# def logout():
-#     session.pop('user')
-#     return redirect('/dashboard')
+@app.route('/logout')
+def logout():
+    session.pop('user')
+    return redirect('/dashboard')
 
 
 
