@@ -23,19 +23,16 @@
       <img class="mb-4" src="../static/assets/img/pngwing.com.png" alt="" width="80" height="80">
       <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
 
-<!-- Flashing Content  -->
-      {% with messages = get_flashed_messages(with_categories=true)%}
-      {% if messages %}
-      {% for category, message in messages %}
-      <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
-        {{message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+    <!-- Flashing Content  -->
+    {% with messages = get_flashed_messages(with_categories=true)%}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{category}}" role="alert">
+                      {{message}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
 
 
       <input type="text" id="uname" name="uname" class="form-control" placeholder="User address" required autofocus>
@@ -45,7 +42,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
       <a href="/"><h6 class="mt-5 mb-3 text-muted footer">Return back</h6></a>
     </form>
 

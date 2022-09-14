@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template, request
-from flask import session,redirect
+from flask import session,redirect, flash 
 import json
 with open("config.json","r") as c:
     params=json.load(c)["params"]
@@ -29,6 +29,7 @@ def dashboard():
             if "content" in request.form:
                 with open("text.txt","w")as f:
                     f.write(request.form["content"])
+                flash("Data Update Successfully","success")
             else:
                 username = request.form.get("uname")
                 userpass = request.form.get("pass")
@@ -39,6 +40,10 @@ def dashboard():
                         data=f.read()
                         params["dataset"]=data
                     return render_template("dashboard.html", params=params)
+                else:
+                    flash("Username or Password Incorrect","danger")
+                    return render_template("signin.html", params=params)
+
     if "user" in session and session['user']==params['admin_user']:
         with open("text.txt","r") as f:
             data=f.read()
