@@ -2,8 +2,6 @@
 from flask import Flask, render_template, request
 from flask import session,redirect
 import json
-from werkzeug.utils import secure_filename
-
 with open("config.json","r") as c:
     params=json.load(c)["params"]
 
@@ -19,7 +17,7 @@ def home():
 @app.route("/textchat")
 def textchat():
     return render_template('textchat.html')
-#this is for getting the inputs from the chatbot and running the same through the model
+#this is for getting the inputs from the chatbot and running the same through the model to be updated when model is made
 
 
 
@@ -50,7 +48,7 @@ def dashboard():
         return render_template("signin.html", params=params)
 
 
-#this is for voicechat
+#this is for voicechat left to be implemented in the website
 @app.route("/voicechat")
 def voice():
     return render_template("voicechat.html")
@@ -59,9 +57,12 @@ def voice():
 
 #this is for logging out of the signin page 
 @app.route('/logout')
-def logout():
-    session.pop('user')
-    return redirect('/dashboard')
+def logout(): 
+    if 'user' in session: 
+        session.pop('user')
+        return redirect('/dashboard')
+    else:
+        return render_template('index.html')
 
 
 
