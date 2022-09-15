@@ -1,6 +1,7 @@
 {
     "params":{
         "admin_user":"admin",
-        "admin_password":"ezpzbabes"
+        "admin_password":"ezpzbabes",
+        "github_link":"https://www.github.com/"
     }
 }

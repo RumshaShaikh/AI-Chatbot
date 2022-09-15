@@ -11,7 +11,7 @@ app.secret_key="super-secret-key"
 #this is for index page
 @app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template('index.html',params=params)
 
 #this is the flask for textchat aka chatbot 
 @app.route("/textchat")
@@ -67,13 +67,13 @@ def logout():
         session.pop('user')
         return redirect('/dashboard')
     else:
-        return render_template('index.html')
+        return render_template('index.html',params=params)
 
 
 
 #this is for about button on navibar just for info purpose
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template('about.html',params=params)
 
 app.run(debug=True)
