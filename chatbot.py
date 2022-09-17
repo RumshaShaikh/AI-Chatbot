@@ -65,16 +65,3 @@ def question_answer(question, text):
     else:
         answer = "Unable to find the answer to your question."
     return answer.capitalize()+"."
-
-with open ("text.txt","r") as f:
-    text=f.read()
-
-while 1:
-  print("Ask any question or enter q to exit")
-  question = input("Enter Your Question:- ")
-  if(question=='q'): 
-    print("Thanks for Talking to Peepo, See You Soon")
-    break
-  else:
-    ans=question_answer(question, text)
-    print(ans)
