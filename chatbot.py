@@ -64,15 +64,17 @@ def question_answer(question, text):
     # if answer starts with cls.....
     else:
         answer = "Unable to find the answer to your question."
-    print("\nAnswer:\n{}".format(answer.capitalize()))
+    return answer.capitalize()+"."
 
-text="this is a test"
+with open ("text.txt","r") as f:
+    text=f.read()
 
 while 1:
   print("Ask any question or enter q to exit")
-  question = input("Enter Your Question")
+  question = input("Enter Your Question:- ")
   if(question=='q'): 
     print("Thanks for Talking to Peepo, See You Soon")
     break
   else:
-    question_answer(question, text)
+    ans=question_answer(question, text)
+    print(ans)
