@@ -1,3 +1,4 @@
 
 text.txt
 *.pickle
+__pycache__/chatbot.cpython-310.pyc
