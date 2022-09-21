@@ -6,11 +6,10 @@ import chatbot
 with open("config.json","r") as c:
     params=json.load(c)["params"]
 
-with open("text.txt","r") as f:
-    data=f.read()
-
 #this is just an extention since we were getting 1 input from the form in the files
 def chatbot_response(usertext):
+    with open("text.txt","r") as f:
+        data=f.read()
     s=chatbot.question_answer(usertext,data)
     return s.capitalize()+"."
 
