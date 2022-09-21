@@ -64,4 +64,4 @@ def question_answer(question, text):
     # if answer starts with cls.....
     else:
         answer = "Unable to find the answer to your question."
-    return answer.capitalize()+"."
+    return answer.capitalize()
