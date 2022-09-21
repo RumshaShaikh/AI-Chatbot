@@ -2,8 +2,17 @@
 from flask import Flask, render_template, request
 from flask import session,redirect, flash 
 import json
+import chatbot
 with open("config.json","r") as c:
     params=json.load(c)["params"]
+
+with open("text.txt","r") as f:
+    data=f.read()
+
+#this is just an extention since we were getting 1 input from the form in the files
+def chatbot_response(usertext):
+    s=chatbot.question_answer(usertext,data)
+    return s.capitalize()+"."
 
 app = Flask(__name__)
 app.secret_key="super-secret-key"
@@ -18,6 +27,10 @@ def home():
 def textchat():
     return render_template('textchat.html')
 #this is for getting the inputs from the chatbot and running the same through the model to be updated when model is made
+@app.route("/textchat/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    return chatbot_response(userText)
 
 
 
@@ -57,6 +70,10 @@ def dashboard():
 @app.route("/voicechat")
 def voice():
     return render_template("voicechat.html")
+@app.route("/voicechat/get")
+def get_bot_response2():
+    userText = request.args.get('msg')
+    return chatbot_response(userText)
 
 
 
