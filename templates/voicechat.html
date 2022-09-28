@@ -101,12 +101,10 @@
         console.log(data);
         const msgText = data;
         appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+        // let test = "this should work fine as hell since this is just a test";
+        let utterance = new SpeechSynthesisUtterance(msgText);
+        speechSynthesis.speak(utterance);
 
-
-        //this is for voice output when the bot will be connected
-          //var message = new SpeechSynthesisUtterance();
-          //message.text = msgText;
-          // window.speechSynthesis.speak(message);
 
       });
 
