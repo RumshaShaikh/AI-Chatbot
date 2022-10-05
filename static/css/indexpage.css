@@ -416,7 +416,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../assets/img/hero-bg.jpg") top center;
+  background: url("../assets/img/How-Do-Bots-Chatbots-Work.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -720,7 +720,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/chatbot2.jpeg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
