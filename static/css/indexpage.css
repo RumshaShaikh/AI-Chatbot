@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background: black;
 }
 
 a {
@@ -554,7 +555,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #151515;
+  color: #444444;
 }
 
 /*--------------------------------------------------------------
@@ -1138,7 +1139,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+  background: black;
   padding: 60px 0;
 }
 
@@ -1225,7 +1226,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info {
   width: 100%;
-  background: #fff;
+  background: black;
 }
 
 .contact .info i {
@@ -1245,9 +1246,9 @@ section {
 .contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 5px;
-  color: #151515;
+  color: #444444;
 }
 
 .contact .info p {
@@ -1264,7 +1265,7 @@ section {
 
 .contact .php-email-form {
   width: 100%;
-  background: #fff;
+  background: black;
 }
 
 .contact .php-email-form .form-group {
