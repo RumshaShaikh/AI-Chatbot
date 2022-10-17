@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background: #fff;
 }
 
 a {
@@ -554,7 +555,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #151515;
+  color: #444444;
 }
 
 /*--------------------------------------------------------------
@@ -1245,9 +1246,9 @@ section {
 .contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 5px;
-  color: #151515;
+  color: #444444;
 }
 
 .contact .info p {
